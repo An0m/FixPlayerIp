@@ -1,0 +1,25 @@
+# A regex string that matches the allowed domains used to connect to the server
+# Leave empty to use the list below instead
+domainRegex: ""
+
+# A list of domains that are allowed to be used to connect to the server
+# This list is not used if the string above is not empty
+domains:
+#  - mc.hypixel.net
+#  - example.com
+
+
+# A list of the proxy's IPs that can be used to connect to the server
+proxies:
+#  - 1.2.3.4
+#  - 4.2.4.1
+
+
+# A list of the whitelisted IPs that can directly connect to the server
+directIPs:
+#  - 8.8.8.8
+#  - 1.1.1.1
+
+
+# Enable and disable the debug mode
+debug: false

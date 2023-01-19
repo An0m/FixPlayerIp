@@ -1,0 +1,4 @@
+name: FixPlayerIP
+version: '${project.version}'
+main: me.an0m.fixplayerip.Main
+description: Restores the original player ip while using a custom minecraft proxy (Like TcpShield's RealIp 2.4)
