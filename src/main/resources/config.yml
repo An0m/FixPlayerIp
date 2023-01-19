@@ -21,5 +21,6 @@ directIPs:
 #  - 1.1.1.1
 
 
-# Enable and disable the debug mode
+# Toggle the debug mode
+# Default: false
 debug: false
