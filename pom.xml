@@ -60,6 +60,10 @@
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
+        <repository>
+            <id>an0m-repo</id>
+            <url>http://localhost/maven/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -68,6 +72,11 @@
             <artifactId>bungeecord-api</artifactId>
             <version>1.19-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>me.an0m</groupId>
+            <artifactId>mcutils</artifactId>
+            <version>LATEST</version>
         </dependency>
     </dependencies>
 </project>

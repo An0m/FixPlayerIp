@@ -1,8 +1,9 @@
 package me.an0m.fixplayerip;
 
-import me.an0m.fixplayerip.utils.Utils;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.plugin.Command;
+
+import static me.an0m.mcutils.bungee.BungeeUtils.sendMessage;
 
 public class ReloadConfigCmd extends Command {
     public ReloadConfigCmd() {
@@ -12,8 +13,8 @@ public class ReloadConfigCmd extends Command {
     @Override
     public void execute(CommandSender sender, String[] args) {
         if (args.length == 1 && args[0].equalsIgnoreCase("reload"))
-            Config.loadConfig();
+            Main.bungeeConfig.loadConfig();
 
-        else Utils.sendMessage(sender, "&cUsage: /fixplayerip reload");
+        else sendMessage(sender, "&cUsage: /fixplayerip reload");
     }
 }

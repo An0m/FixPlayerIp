@@ -8,22 +8,22 @@ import net.md_5.bungee.event.EventHandler;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 
-import static me.an0m.fixplayerip.Config.configuration;
-import static me.an0m.fixplayerip.utils.Utils.*;
+import static me.an0m.fixplayerip.Utils.*;
+import static me.an0m.mcutils.MsgUtils.logBungee;
 
 public class HandshakeListener implements Listener {
 
     @EventHandler(priority = 64)
     public void onHandShake(PlayerHandshakeEvent e) {
         PendingConnection connection = e.getConnection();
-        boolean debugEnabled = configuration.getBoolean("debug");
+        boolean debugEnabled = Main.bungeeConfig.configuration.getBoolean("debug");
 
 
         String lastRelayIP = clearHostName(connection.getSocketAddress().toString());
 
         // * Check if the (direct) connection comes from a whitelisted ip
-        if (configuration.getStringList("directIPs").contains(lastRelayIP)) {
-            if (debugEnabled) log("[FixPlayerIP] Direct handshake allowed from " + lastRelayIP);
+        if (Main.bungeeConfig.configuration.getStringList("directIPs").contains(lastRelayIP)) {
+            if (debugEnabled) logBungee("[FixPlayerIP] Direct handshake allowed from " + lastRelayIP);
             return;
         }
 
@@ -31,7 +31,7 @@ public class HandshakeListener implements Listener {
         String rawLoginAddress = connection.getVirtualHost().getHostName();
 
         // * Validate the source of the connection (ip)
-        if (!configuration.getStringList("proxies").contains(lastRelayIP)) {
+        if (!Main.bungeeConfig.configuration.getStringList("proxies").contains(lastRelayIP)) {
             blockConnection(connection, lastRelayIP, rawLoginAddress);
             return;
         }
@@ -48,11 +48,11 @@ public class HandshakeListener implements Listener {
 
 
         // * Validate the source of the connection (domain)
-        String domainRegex = configuration.getString("domainRegex");
+        String domainRegex = Main.bungeeConfig.configuration.getString("domainRegex");
         boolean usingRegex = !domainRegex.isEmpty();
         if (
                 (usingRegex && !loginDomain.matches(domainRegex)) ||
-                (!usingRegex && !configuration.getStringList("domains").contains(loginDomain))
+                (!usingRegex && !Main.bungeeConfig.configuration.getStringList("domains").contains(loginDomain))
         ) {
             if (debugEnabled) blockConnection(connection, lastRelayIP, rawLoginAddress);
             else connection.disconnect();
@@ -75,7 +75,7 @@ public class HandshakeListener implements Listener {
         }
 
         if (debugEnabled)
-            log("[FixPlayerIP] Handshake allowed from \"" + loginAddress + "\" using \"" + loginDomain + "\"(" + lastRelayIP + ")");
+            logBungee("[FixPlayerIP] Handshake allowed from \"" + loginAddress + "\" using \"" + loginDomain + "\"(" + lastRelayIP + ")");
     }
 
 }
