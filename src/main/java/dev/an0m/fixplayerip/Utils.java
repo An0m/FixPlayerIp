@@ -1,13 +1,13 @@
-package me.an0m.fixplayerip;
+package dev.an0m.fixplayerip;
 
 import net.md_5.bungee.api.connection.PendingConnection;
 
 import java.lang.reflect.Field;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
-import me.an0m.mcutils.ReflectionUtil;
+import dev.an0m.mcutils.ReflectionUtil;
 
-import static me.an0m.mcutils.MsgUtils.warnBungee;
+import static dev.an0m.mcutils.MsgUtils.warnBungee;
 
 public class Utils {
 

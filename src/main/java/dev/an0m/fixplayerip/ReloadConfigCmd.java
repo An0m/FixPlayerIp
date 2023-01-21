@@ -1,9 +1,9 @@
-package me.an0m.fixplayerip;
+package dev.an0m.fixplayerip;
 
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.plugin.Command;
 
-import static me.an0m.mcutils.bungee.BungeeUtils.sendMessage;
+import static dev.an0m.mcutils.bungee.BungeeUtils.sendMessage;
 
 public class ReloadConfigCmd extends Command {
     public ReloadConfigCmd() {

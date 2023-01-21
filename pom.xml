@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>me.an0m</groupId>
+    <groupId>dev.an0m</groupId>
     <artifactId>fixplayerip</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
@@ -62,7 +62,7 @@
         </repository>
         <repository>
             <id>an0m-repo</id>
-            <url>http://localhost/maven/</url>
+            <url>https://an0m.dev/maven/</url>
         </repository>
     </repositories>
 
@@ -74,7 +74,7 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>me.an0m</groupId>
+            <groupId>dev.an0m</groupId>
             <artifactId>mcutils</artifactId>
             <version>LATEST</version>
         </dependency>

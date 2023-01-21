@@ -1,4 +1,4 @@
-package me.an0m.fixplayerip;
+package dev.an0m.fixplayerip;
 
 import net.md_5.bungee.api.connection.PendingConnection;
 import net.md_5.bungee.api.event.PlayerHandshakeEvent;
@@ -8,8 +8,8 @@ import net.md_5.bungee.event.EventHandler;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 
-import static me.an0m.fixplayerip.Utils.*;
-import static me.an0m.mcutils.MsgUtils.logBungee;
+import static dev.an0m.fixplayerip.Utils.*;
+import static dev.an0m.mcutils.MsgUtils.logBungee;
 
 public class HandshakeListener implements Listener {
 

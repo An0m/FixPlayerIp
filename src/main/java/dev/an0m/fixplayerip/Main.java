@@ -1,6 +1,6 @@
-package me.an0m.fixplayerip;
+package dev.an0m.fixplayerip;
 
-import me.an0m.mcutils.bungee.BungeeConfig;
+import dev.an0m.mcutils.bungee.BungeeConfig;
 import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.api.plugin.PluginManager;
 
